@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pokemon API</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/slidebox.css">
+</head>
+<body>
+
+  <input type="checkbox" id="burguer">
+  <label for="burguer"><i class="fa fa-bars"></i></label>
+
+  <section id="lightbox">
+    <div id="linha">
+      <img src="imgs/hr.png">
+    </div>
+    <div id="infosEimg">
+      <div id="infos">
+        <p>Nome: bulbasaur</p>
+        <p>Id: 1</p>
+        <p>Peso: 69</p>
+        <p>Tipo(s): poison/grass</p>
+      </div>
+      <div id="box-img-div">
+        <img class="box-img" src="imgs/sprites/default/1.png">
+        <img class="box-img" src="imgs/sprites/back/1.png">
+      </div>
+    </div>
+  </section>
+
+  <section id="pokemons">
+  </section>
+
+  <audio id="pkm-click-audio" src="audio/pokemon_click.mp3" preload="auto">
+  </audio>
+  <audio src="audio/pallet_town.mp3" autoplay loop>
+  </audio>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

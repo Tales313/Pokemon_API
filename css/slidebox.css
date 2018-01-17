@@ -1,0 +1,95 @@
+#lightbox {
+  position: fixed;
+  left: -495px;
+  top: 48px;
+  display: grid;
+  grid-template-columns: 140px 350px;
+  transition: all .4s ease;
+  opacity: 0;
+  z-index: 1;
+}
+
+@media all and (max-width: 650px) {
+  #lightbox {
+    grid-template-columns: 100px 250px;
+  }
+}
+
+@media all and (max-width: 400px) {
+  #lightbox {
+    grid-template-columns: 70px 220px;
+  }
+}
+
+#burguer:checked ~ section#lightbox {
+  left: 0;
+  opacity: 1;
+}
+
+#lightbox #linha {
+  display: flex;
+  align-items: center;
+}
+
+#lightbox #infosEimg {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-image: url("../imgs/pokeball.png");
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #1010ba;
+}
+
+@media all and (max-width: 400px) {
+  #lightbox #infosEimg {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#lightbox #infos{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #1010ba;
+  padding-left: 5px;
+}
+
+@media all and (max-width: 650px) {
+  #lightbox #infos {
+    font-size: 1em;
+  }
+}
+
+@media all and (max-width: 400px) {
+  #lightbox #infos {
+    line-height: 1.3em;
+  }
+}
+
+#lightbox #box-img-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media all and (max-width: 400px) {
+  #lightbox #box-img-div {
+    flex-direction: row;
+  }
+}
+
+#lightbox .box-img {
+  width: 163px;
+  height: 163px;
+}
+
+@media all and (max-width: 650px) {
+  #lightbox .box-img {
+    width: 105px;
+    height: 105px;
+  }
+}
