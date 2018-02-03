@@ -6,13 +6,16 @@ const pokemonsG1 = 'https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0'
 const pokemonUrl = 'https://pokeapi.co/api/v2/pokemon/'
 const pkm_click_audio = document.querySelector('#pkm-click-audio')
 let sectionPokemons = document.querySelector('#pokemons')
+let formulario = document.querySelector('#searchForm')
 let infosEimg = document.querySelector('#infosEimg')
 let body = document.querySelector('body')
 let is_box_visible = false
 
 // INICIO DAS CHAMADAS DE FUNCOES
 gerarPokemons()
-$('.fa-bars').click(() => {boxSlide()})
+$('.fa-bars').click(() => boxSlide())
+$('#searchButton').click((event) => searchPokemon(event))
+$('#searchInput').keyup((event) => searchPokemon(event))
 //FIM DAS CHAMADAS DE FUNCOES
 
 function gerarPokemons(){
@@ -20,9 +23,9 @@ function gerarPokemons(){
     let array = []
     let i = 1
     for(let pkm of data['results']){ // do bulbasauro até o mew
-      array.push(`<div class="pokemon">
+      array.push(`<div class="pokemon ${pkm.name}">
         <img class="img-pokemon" data-id="${i}" src="imgs/sprites/default/${i}.png">
-        <span>${pkm['name']}</span>
+        <span>${pkm.name}</span>
         </div>`)
       i++
     }
@@ -70,5 +73,20 @@ function boxSlide(){
     $('#pokemons').css('filter', 'none')
     body.style = "overflow: visible;"
     is_box_visible = false
+  }
+}
+
+function searchPokemon(event){
+  event.preventDefault()
+  let formData = new FormData(formulario)
+  let pesquisa = formData.get('search')
+  let pokemons = document.querySelectorAll('.pokemon')
+  let nome
+  for(let pkm of pokemons){
+    nome = pkm.className.split(' ')[1] //nome do pokemon
+    if(nome.indexOf(pesquisa) == -1)
+      pkm.style.display = 'none'
+    else
+      pkm.style.display = 'flex'
   }
 }
