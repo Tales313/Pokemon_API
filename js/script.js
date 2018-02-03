@@ -12,15 +12,7 @@ let is_box_visible = false
 
 // INICIO DAS CHAMADAS DE FUNCOES
 gerarPokemons()
-$('.fa-bars').click(function(){
-  if(!is_box_visible){
-    body.style = "overflow: hidden;"
-    is_box_visible = true
-  }else{
-    body.style = "overflow: visible;"
-    is_box_visible = false
-  }
-})
+$('.fa-bars').click(() => {boxSlide()})
 //FIM DAS CHAMADAS DE FUNCOES
 
 function gerarPokemons(){
@@ -63,4 +55,20 @@ function lightBoxHtml(data, id){
     <img class="box-img" src="imgs/sprites/default/${id}.png">
     <img class="box-img" src="imgs/sprites/back/${id}.png">
   </div>`
+}
+
+function boxSlide(){
+  if(!is_box_visible){
+    $('#lightbox').css({'left': '0', 'opacity': '1'})
+    $('.fa-bars').css('transform', 'rotate(-180deg)')
+    $('#pokemons').css('filter', 'blur(10px)')
+    body.style = "overflow: hidden;"
+    is_box_visible = true
+  }else{
+    $('#lightbox').css({'left': '-495px', 'opacity': '0'})
+    $('.fa-bars').css('transform', 'rotate(0deg)')
+    $('#pokemons').css('filter', 'none')
+    body.style = "overflow: visible;"
+    is_box_visible = false
+  }
 }

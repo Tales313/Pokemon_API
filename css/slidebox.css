@@ -21,11 +21,6 @@
   }
 }
 
-#burguer:checked ~ section#lightbox {
-  left: 0;
-  opacity: 1;
-}
-
 #lightbox #linha {
   display: flex;
   align-items: center;

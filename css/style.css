@@ -10,12 +10,7 @@ body {
   background-attachment: fixed;
 }
 
-#burguer {
-  display: none;
-  position: fixed;
-}
-
-label i.fa-bars {
+i.fa-bars {
   position: fixed;
   left: 8px;
   top: 8px;
@@ -23,19 +18,6 @@ label i.fa-bars {
   transition: transform .4s;
   cursor: pointer;
   z-index: 10; /*pra ficar por cima do body*/
-}
-
-i.fa-minus-square-o {
-  position: fixed;
-  right: 8px;
-  top: 8px;
-  font-size: 2em;
-  cursor: pointer;
-  z-index: 9;
-}
-
-#burguer:checked ~ label .fa-bars {
-  transform: rotate(-180deg);
 }
 
 #pokemons {
@@ -62,10 +44,6 @@ i.fa-minus-square-o {
   #pokemons {
     grid-template-columns: repeat(2, 50%);
   }
-}
-
-#burguer:checked ~ section#pokemons {
-  filter: blur(10px);
 }
 
 .pokemon {
