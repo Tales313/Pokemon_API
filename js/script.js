@@ -80,6 +80,7 @@ function searchPokemon(event){
   event.preventDefault()
   let formData = new FormData(formulario)
   let pesquisa = formData.get('search')
+  pesquisa = pesquisa.toLowerCase()
   let pokemons = document.querySelectorAll('.pokemon')
   let nome
   for(let pkm of pokemons){
